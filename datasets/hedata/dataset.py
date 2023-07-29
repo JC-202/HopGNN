@@ -5,12 +5,14 @@ sys.path.append('..')
 sys.path.append('../hedata')
 import scipy
 import scipy.io
-from datasets.hedata.load_data import  DATAPATH
 from datasets.hedata.data_utils import rand_train_test_idx
 
 from torch_geometric.datasets import Planetoid
 from ogb.nodeproppred import NodePropPredDataset
 
+from os import path as path
+
+DATAPATH = path.dirname(path.abspath(__file__))
 
 class NCDataset(object):
     def __init__(self, name, root=f'{DATAPATH}'):

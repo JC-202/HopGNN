@@ -9,14 +9,12 @@ from dgl.data import *
 from torch_geometric.data import Data
 from utils.graph_transform import sparse_normalize, remove_self_loop
 from torch_sparse import SparseTensor
-from os import path as path
 from datasets.hedata.dataset import load_nc_dataset
 from datasets.hedata.data_utils import load_fixed_splits
 from torch_geometric.datasets.flickr import Flickr
 from torch_geometric.datasets.reddit import Reddit
 import os
 
-DATAPATH = path.dirname(path.abspath(__file__))
 
 class NC_Data():
     def __init__(self, pyg_data, device):
